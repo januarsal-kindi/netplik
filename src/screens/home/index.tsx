@@ -1,7 +1,13 @@
-import MainLayout from "@/components/layouts/MainLayout";
 import React from "react";
+import MainLayout from "@/components/layouts/MainLayout";
+import Image from "next/image";
+import { useGetDiscoveryMovie } from "@/domain/discover/useGetDiscoveryMovie";
 
-export default function index() {
+export default function Home() {
+  const { data, isLoading, error } = useGetDiscoveryMovie();
+  console.log("data", data);
+  console.log("isLoading", isLoading);
+  console.log("isError", error);
   return (
     <MainLayout>
       <section>
@@ -20,24 +26,27 @@ export default function index() {
         <div className="flex flex-col justify-between mt-4 bg-black/10 bg-blend-multiply rounded-3xl h-80 overflow-hidden bg-cover bg-center px-7 pt-4 pb-6 text-white">
           {/* <!-- <img className="object-cover w-full h-full" src="images/inception.jpg" alt=""> --> */}
           <div className="flex -space-x-1 items-center ">
-            <img
+            {/* <Image
               className="rounded-full w-7 h-7 shadow-lg border border-white"
               src="https://api.lorem.space/image/face?w=32&amp;h=32&amp;hash=zsrj8csk"
               alt=""
-              srcSet=""
+              width={28}
+              height={28}
             />
-            <img
+            <Image
               className="rounded-full w-7 h-7 shadow-lg border border-white"
               src="https://api.lorem.space/image/face?w=32&amp;h=32&amp;hash=zsrj8cck"
               alt=""
-              srcSet=""
+              width={28}
+              height={28}
             />
-            <img
+            <Image
               className="rounded-full w-7 h-7 shadow-lg border border-white"
               src="https://api.lorem.space/image/face?w=32&amp;h=32&amp;hash=zsfj8cck"
               alt=""
-              srcSet=""
-            />
+              width={28}
+              height={28}
+            /> */}
             <span className="pl-4 text-xs drop-shadow-lg">
               +8 friends are watching
             </span>
@@ -89,7 +98,9 @@ export default function index() {
             <img
               src="https://www.jolie.de/sites/default/files/styles/image_gallery360w/public/2020-02/leonardo-dicaprio-oscars.jpg?h=64dbc2fc&itok=EH0B3oo4"
               className="object-cover h-full w-full -z-10"
-              alt=""
+              alt="Leonardo DiCaprio"
+              width={360}
+              height={480}
             />
             <div className="absolute top-0 h-full w-full bg-gradient-to-t from-black/50 p-3 flex flex-col justify-between">
               <a
@@ -110,6 +121,8 @@ export default function index() {
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/WP_-_random_-5_%2814094372762%29.jpg/319px-WP_-_random_-5_%2814094372762%29.jpg"
               className="object-cover w-full h-full -z-10"
               alt=""
+              width={319}
+              height={420}
             />
             <div className="absolute top-0 h-full w-full bg-gradient-to-t from-black/50 p-3 flex flex-col justify-between">
               <a
@@ -130,6 +143,8 @@ export default function index() {
               src="https://img.zeit.de/kultur/film/2020-12/elliot-page-tranmann/wide__450x253__mobile__scale_1"
               className="object-cover h-full w-full -z-10"
               alt=""
+              width={450}
+              height={253}
             />
             <div className="absolute top-0 h-full w-full bg-gradient-to-t from-black/50 p-3 flex flex-col justify-between">
               <a

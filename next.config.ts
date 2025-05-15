@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
     return config;
   },
   reactStrictMode: true,
+  serverRuntimeConfig: {
+    token_api: process.env.TOKEN_API,
+    api_domain: process.env.API_DOMAIN,
+  },
 };
 
 export default nextConfig;

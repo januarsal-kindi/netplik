@@ -1,5 +1,9 @@
 import ScreenHome from "@/screens/home";
+import { GetServerSideProps } from "next";
 
-export default function Home() {
-  return <ScreenHome />;
-}
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {},
+  };
+};
+export default ScreenHome;
